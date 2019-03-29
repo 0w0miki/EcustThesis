@@ -1,4 +1,4 @@
-# 上海交通大学学位论文模板
+# 华东理工大学大学学位论文模板
 
 [![Build Status](https://travis-ci.org/sjtug/SJTUThesis.svg?branch=master)](https://travis-ci.org/sjtug/SJTUThesis)
 [![Build status](https://ci.appveyor.com/api/projects/status/9026p23k53dt2607/branch/master?svg=true)](https://ci.appveyor.com/project/SJTUG/sjtuthesis/branch/master)
@@ -6,7 +6,7 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/sjtug/SJTUThesis.svg)](https://github.com/sjtug/SJTUThesis/releases)
 [![Join the chat at https://gitter.im/sjtug/SJTUThesis](https://badges.gitter.im/sjtug/SJTUThesis.svg)](https://gitter.im/sjtug/SJTUThesis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-这是为撰写上海交通大学学士、硕士、博士学位论文或课程论文而准备的 XeLaTeX 模板，非官方出品。生成的学位论文文件参见 [README.pdf][README]，详细使用说明参见 [SJTUThesis Wiki](https://github.com/sjtug/SJTUThesis/wiki)。
+这是为撰写华东理工大学学士、硕士、博士学位论文或课程论文而准备的 XeLaTeX 模板，非官方出品。本模板改编自上海交通大学学位论文模板[SJTUThesis](https://github.com/sjtug/SJTUThesis)。生成的学位论文文件参见 [README.pdf][README]，详细使用说明参见 [SJTUThesis Wiki](https://github.com/sjtug/SJTUThesis/wiki)。
 
 ## 封面展示
 
@@ -94,8 +94,7 @@ make wordcount
 
 如果在使用上有任何问题，建议先阅读[常见问题与建议](https://github.com/sjtug/SJTUThesis/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E5%BB%BA%E8%AE%AE)。如果这些不能解决你的问题，建议以如下的顺序反馈使用过程中的问题：
 
-* [在 GitHub 项目主页开 issue](https://github.com/sjtug/SJTUThesis/issues) (推荐)
-* [在水源 BBS TeX_LaTeX 版发帖](https://bbs.sjtu.edu.cn/bbsdoc?board=TeX_LaTeX)
+* [在 GitHub 项目主页开 issue](https://github.com/sjtug/SJTUThesis/issues) 
 
 如果你觉得项目的使用体验不好，或者想感谢我们的维护者们等等任何与使用无关的想法，都可以通过我们的[在线聊天频道](https://gitter.im/sjtug/SJTUThesis)告诉我们。
 
@@ -107,7 +106,6 @@ SJTUThesis 是一个由诸多感兴趣的同学一起维护的开源项目，我
 * 与我们一起维护项目的 [Wiki 文档](https://github.com/sjtug/SJTUThesis/wiki)，Wiki 是可以直接编辑的
 * 向我们贡献代码，我们有一些对新的贡献者比较友好的问题，你可以从[这些问题](https://github.com/sjtug/SJTUThesis/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue)开始熟悉贡献代码的流程
 * 向周围同学安利 SJTUThesis，让更多的同学使用我们维护的模板
-* 在我们的[在线聊天频道上](https://gitter.im/sjtug/SJTUThesis)告诉我们你的使用体验，以及吐槽。如果你也想成为项目的长期维护者，也可以通过在线频道告诉我们 :-)
 
 ## 后续工作计划
 
