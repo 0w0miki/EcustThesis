@@ -15,6 +15,7 @@
 %   english,                % 启用英文模版
 %   review,     % 盲审论文，隐去作者姓名、学号、导师姓名、致谢、发表论文和参与的项目
 %   submit      % 定稿提交的论文，插入签名扫描版的原创性声明、授权声明
+%   check       % 查重论文，从摘要开始
 % ]
 
 % 逐个导入参考文献数据库
@@ -30,9 +31,12 @@
 \begin{document}
 
 % 无编号内容：中英文论文封面、授权页
-\maketitle
 \makeatletter
-
+\makeatletter
+\ifsjtu@check
+\else
+\maketitle
+\fi
 \ifsjtu@coursepaper
 \else
   \ifsjtu@submit\relax
@@ -44,8 +48,11 @@
     \ifsjtu@review\relax
     % exclude the original claim and authorization
     \else
-      \makeDeclareOriginal
-      \makeDeclareAuthorization
+      \ifsjtu@check
+      \else
+        \makeDeclareOriginal
+        \makeDeclareAuthorization
+      \fi
     \fi
   \fi
   \frontmatter % 使用罗马数字对前言编号

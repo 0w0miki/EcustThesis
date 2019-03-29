@@ -6,6 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{sjtuthesis}[2018/01/09 v0.10 Shanghai Jiao Tong University Template]
 \def\version{v0.10}
+\newif\ifsjtu@check\sjtu@checkfalse
 \newif\ifsjtu@coursepaper\sjtu@coursepaperfalse
 \newif\ifsjtu@bachelor\sjtu@bachelorfalse
 \newif\ifsjtu@master\sjtu@masterfalse
@@ -13,6 +14,7 @@
 \newif\ifsjtu@english\sjtu@englishfalse
 \newif\ifsjtu@review\sjtu@reviewfalse
 \newif\ifsjtu@submit\sjtu@submitfalse
+\DeclareOption{check}{\sjtu@checktrue}
 \DeclareOption{coursepaper}{\sjtu@coursepapertrue}
 \DeclareOption{bachelor}{\sjtu@bachelortrue}
 \DeclareOption{master}{\sjtu@mastertrue}
@@ -34,6 +36,7 @@
     \PassOptionsToClass{zihao=5}{ctexbook}
   \else
     \PassOptionsToClass{zihao=-4}{ctexbook}
+    \ifsjtu@check\else
     \ifsjtu@master\relax\else
       \ifsjtu@doctor\relax\else
         \ClassError{sjtuthesis}%
@@ -170,8 +173,8 @@
 \setCJKfamilyfont{song}[AutoFakeBold = {2.17}]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{zhsong}}
 
-\dottedcontents{chapter}[56pt]{\zihao{4}\songti\bfseries\filleft}{56pt}{5pt}
-\dottedcontents{section}[26pt]{\zihao{-4}\songti\bfseries \filleft}{26pt}{5pt}
+\dottedcontents{chapter}[56pt]{\zihao{4}\songti\filleft}{56pt}{5pt}
+\dottedcontents{section}[26pt]{\zihao{-4}\songti\filleft}{26pt}{5pt}
 \dottedcontents{subsection}[38pt]{\zihao{-4}\songti\filleft}{38pt}{5pt}
 
 \renewcommand{\cftchapfont}{\bfseries\heiti}  % 目录章节标题（黑体加粗）
