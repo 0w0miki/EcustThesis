@@ -14,7 +14,8 @@
 %   openany|openright,      % 可以在奇数或者偶数页开新章|只在奇数页开新章(默认)
 %   english,                % 启用英文模版
 %   review,     % 盲审论文，隐去作者姓名、学号、导师姓名、致谢、发表论文和参与的项目
-%   submit      % 定稿提交的论文，插入签名扫描版的原创性声明、授权声明
+%   submit,     % 定稿提交的论文，插入签名扫描版的原创性声明、授权声明
+%   file,       % 归档论文，插入学位论文提交要求，卷内备考表
 %   check       % 查重论文，从摘要开始
 % ]
 
@@ -32,7 +33,6 @@
 
 % 无编号内容：中英文论文封面、授权页
 \makeatletter
-\makeatletter
 \ifsjtu@check
 \else
 \maketitle
@@ -40,18 +40,26 @@
 \ifsjtu@coursepaper
 \else
   \ifsjtu@submit\relax
-    \includepdf{pdf/original.pdf}
+    \includepdf{pdf/titlepage.pdf} % 扉页
     \cleardoublepage
-    \includepdf{pdf/authorization.pdf}
+    \includepdf{pdf/original.pdf}
     \cleardoublepage
   \else
     \ifsjtu@review\relax
     % exclude the original claim and authorization
     \else
-      \ifsjtu@check
+      \ifsjtu@file\relax
+        % exclude the original claim and authorization
+        \includepdf{pdf/cover.pdf}
+        \cleardoublepage
+        \includepdf{pdf/titlepage.pdf} % 扉页
+        \cleardoublepage
+        \includepdf{pdf/requirement.pdf}
+        \cleardoublepage
+        \includepdf{pdf/original.pdf}  % 原创性声明
+        \cleardoublepage
       \else
-        \makeDeclareOriginal
-        \makeDeclareAuthorization
+        
       \fi
     \fi
   \fi
@@ -62,14 +70,14 @@
 
   % 目录、插图目录、表格目录
   \tableofcontents
-  %\listoffigures
-  % \addcontentsline{toc}{chapter}{\listfigurename}     % 将插图目录加入全文目录
- % \listoftables
-  % \addcontentsline{toc}{chapter}{\listtablename}      % 将表格目录加入全文目录
-  %\listofalgorithms
-  %\addcontentsline{toc}{chapter}{\listalgorithmname}  % 将算法目录加入全文目录
+  \listoffigures
+  \addcontentsline{toc}{chapter}{\listfigurename}     % 将插图目录加入全文目录
+  \listoftables
+  \addcontentsline{toc}{chapter}{\listtablename}      % 将表格目录加入全文目录
+  \listofalgorithms
+  \addcontentsline{toc}{chapter}{\listalgorithmname}  % 将算法目录加入全文目录
 
-  % \include{tex/symbol} % 主要符号、缩略词对照表
+  \include{tex/symbol} % 主要符号、缩略词对照表
 \fi
 
 \makeatother
@@ -119,6 +127,10 @@
       \include{tex/projectsreview}
     \else
       \include{tex/pub}       % 发表论文
+      \ifsjtu@file\relax
+        \cleardoublepage
+        \includepdf{pdf/memo.pdf}
+      \fi
       % \include{tex/projects}  % 参与的项目
       % \include{tex/patents}   % 申请专利
       % \include{tex/resume}    % 个人简历
