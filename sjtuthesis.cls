@@ -7,6 +7,7 @@
 \ProvidesClass{sjtuthesis}[2018/01/09 v0.10 Shanghai Jiao Tong University Template]
 \def\version{v0.10}
 \newif\ifsjtu@check\sjtu@checkfalse
+\newif\ifsjtu@file\sjtu@filefalse
 \newif\ifsjtu@coursepaper\sjtu@coursepaperfalse
 \newif\ifsjtu@bachelor\sjtu@bachelorfalse
 \newif\ifsjtu@master\sjtu@masterfalse
@@ -15,6 +16,7 @@
 \newif\ifsjtu@review\sjtu@reviewfalse
 \newif\ifsjtu@submit\sjtu@submitfalse
 \DeclareOption{check}{\sjtu@checktrue}
+\DeclareOption{file}{\sjtu@filetrue}
 \DeclareOption{coursepaper}{\sjtu@coursepapertrue}
 \DeclareOption{bachelor}{\sjtu@bachelortrue}
 \DeclareOption{master}{\sjtu@mastertrue}
@@ -465,8 +467,8 @@
     \ifsjtu@bachelor
       \makechinesetitle@bachelor
     \else
-      \makechinesetitle
-      \makeenglishtitle
+      % \makechinesetitle
+      % \makeenglishtitle
     \fi
   \fi
 }
